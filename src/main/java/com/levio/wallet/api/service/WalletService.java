@@ -5,14 +5,15 @@ import javassist.NotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.concurrent.ExecutionException;
 
-@Service
+
 public interface WalletService {
 
     public WalletLevio createWallet() throws Exception;
     public boolean validateCreation() throws NotFoundException;
-    public WalletLevio getWalletByUserId(Long userId) throws NotFoundException;
-    public String sendTransaction(String from, String to, BigDecimal levioCoin) throws Exception;
+    public WalletLevio getWalletByUserId(Long userId) throws NotFoundException, ExecutionException, InterruptedException;
+
 
     public boolean validateSolde(String address, BigDecimal levioCoin) throws Exception;
 

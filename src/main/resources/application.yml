@@ -6,7 +6,4 @@ spring:
   datasource:
     url: "jdbc:postgresql://127.0.0.1:5432/LevioCoin"
     username: postgres
-    password: root
-
-document:
-  upload-directory: wallet-file
+    password: root1234

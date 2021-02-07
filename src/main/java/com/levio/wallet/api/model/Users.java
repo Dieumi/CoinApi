@@ -1,18 +1,20 @@
 package com.levio.wallet.api.model;
 
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Collection;
+import javax.persistence.*;
+import java.util.*;
 
 @Entity
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Users implements UserDetails {
 
     @Id
@@ -21,12 +23,19 @@ public class Users implements UserDetails {
 
     private String email;
     private String username;
+
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private String password;
     private String role;
 
+
+
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+    public Collection<Role> getAuthorities() {
+        List<Role> listRole = new ArrayList<Role>();
+        listRole.add(new Role(getRole()));
+        return  listRole;
     }
 
     @Override
