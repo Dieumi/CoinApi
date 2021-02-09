@@ -12,6 +12,7 @@ import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
 import org.web3j.tx.gas.StaticGasProvider;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 @Service
@@ -32,7 +33,7 @@ public class ContractService {
         Users principal = (Users) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         WalletLevio wallet = walletService.getWalletByUserId(principal.getId());
         Credentials credentials = Credentials.create(wallet.getPrivateKey());
-        Lottery lottery=Lottery.deploy(web3j,credentials,staticGasProvider).sendAsync().get();
+        Lottery lottery=Lottery.deploy(web3j,credentials,staticGasProvider, BigInteger.valueOf(5)).sendAsync().get();
 
         System.out.println(lottery.getContractAddress());
         Cagnotte cagnotte = Cagnotte.builder()

@@ -50,6 +50,7 @@ public class CagnotteServiceImpl implements CagnotteService{
                 .transactionHash(transaction.getTransactionHash())
                 .levioCoin(amount.toString())
                 .sender(wallet)
+                .reason("Ticket cagnotte")
                 .build();
         transactionRepository.save(transactionToSave);
 

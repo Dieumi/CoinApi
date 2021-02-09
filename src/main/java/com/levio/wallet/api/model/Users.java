@@ -23,7 +23,7 @@ public class Users implements UserDetails {
 
     private String email;
     private String username;
-
+    @JsonIgnore
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private String password;

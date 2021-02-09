@@ -32,5 +32,6 @@ public class Transaction {
     @JoinColumn(name = "sender_id", referencedColumnName = "id")
     private WalletLevio sender;
     private String transactionHash;
+    private String reason;
     private Date date;
 }

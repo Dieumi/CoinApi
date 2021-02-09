@@ -24,11 +24,13 @@ public class CagnotteController {
     UserDetailsService userDetailsService;
     @PostMapping("/buyTicket")
     @ResponseBody
-    public ResponseEntity<?> createCagnotte(@RequestBody BuyTicket buyTicket) throws Exception {
+    public ResponseEntity<?> buyTicket(@RequestBody BuyTicket buyTicket) throws Exception {
         Users principal = (Users) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Cagnotte cagnotte = cagnotteService.getById(buyTicket.getCagnotte());
+
         cagnotteService.buyTicket(principal,cagnotte,Float.parseFloat(buyTicket.getLevioCoin()));
 
-        return ResponseEntity.ok("test");
+        return ResponseEntity.ok("Ticket buyed-");
     }
+
 }

@@ -16,6 +16,7 @@ import java.util.Date;
 public class BuyTicket {
 
     private String levioCoin;
+    private Integer ticketNumber;
     private String cagnotte;
 
 }
