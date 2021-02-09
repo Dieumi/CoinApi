@@ -1,0 +1,9 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: "leviocoin.czlptflqfzfa.us-east-1.rds.amazonaws.com:5432/LevioCoin"
+    username: postgres
+    password: Qf7qw%wrVL)cXrXxb
