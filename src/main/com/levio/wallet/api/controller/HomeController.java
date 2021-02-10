@@ -39,13 +39,8 @@ public class HomeController {
     WalletService walletService;
     @GetMapping("/")
     @ResponseBody
-    public String home() throws NotFoundException, ExecutionException, InterruptedException {
-        Users principal = (Users) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        WalletLevio wallet=walletService.getWalletByUserId(principal.getId());
-        if(wallet != null){
-            return ("<h1>Welcome " +principal.getUsername()+"</h1><br/><h1>your wallet :  " +wallet.getPublicKey()+"</h1>");
-        }
-        return ("<h1>Welcome " +principal.getUsername()+"</h1>");
+    public String home()  {
+        return ("Welcome ");
     }
 
     @GetMapping("/listUser")
