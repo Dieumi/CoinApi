@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: va.com.levio.wallet.api.ApiApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.22 s <<< FAILURE! - in va.com.levio.wallet.api.ApiApplicationTests
+va.com.levio.wallet.api.ApiApplicationTests  Time elapsed: 0.218 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+
