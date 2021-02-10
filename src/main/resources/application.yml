@@ -4,6 +4,6 @@ spring:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    url: "jdbc:postgresql://leviocoin.czlptflqfzfa.us-east-1.rds.amazonaws.com/LevioCoin"
+    url: "jdbc:postgresql://leviocoin2.czlptflqfzfa.us-east-1.rds.amazonaws.com:5432/LevioCoin"
     username: postgres
     password: Qf7qw%wrVL)cXrXxb
